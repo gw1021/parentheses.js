@@ -11,12 +11,12 @@ get string, mouse Click, make parentheses
 <button onclick="getString()">Getting</button> <button onclick="printPage()">Print</button>
 
 <h1>Original</h1>
-<div class="poem orginal">
+<div class="orginal">
 	<!-- orginal string -->
 </div>
 
 <h1>Text Split</h1>
-<div class="poem output">
+<div class="output">
 	<!-- output string -->
 </div>
 ```
