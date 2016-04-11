@@ -7,8 +7,8 @@ get string, mouse Click, make parentheses
 # usage
 - body
 ```
-<input type="text" id="getting" placeholder="String"> <button onclick="getString()">Getting</button> <button onclick="printPage()">Print</button>
-</div>
+<input type="text" id="getting" placeholder="String"> 
+<button onclick="getString()">Getting</button> <button onclick="printPage()">Print</button>
 
 <h1>Original</h1>
 <div class="poem orginal">
