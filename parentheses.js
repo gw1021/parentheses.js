@@ -1,11 +1,6 @@
-$(document).ready(function() {
-	console.log( "Jquery is ready!" );
-	$( ".orginal" ).text("ready!");
-	$( ".output" ).text("ready!");
-	// jquery 플러그인이 로딩되면 출격하는 텍스트들..
-});
-
 function getString() {
+	$( ".controll" ).hide();
+	$( ".output-section" ).show();
 	var orginalString = $("#getting").val();//input 받아 변수로 저장
 	var textrepeat = orginalString.split(" ");// orginalString 스플릿
 	$( ".output" ).empty();//output을 미리청소
@@ -32,14 +27,4 @@ function rePlaced(className) {
 
 function printPage() {
 	window.print();
-}
-
-function getCurrentDate() {
-	var ms = new Date();
-
-	var hour = ms.getHours();
-	var minute = ms.getMinutes();
-	var second = ms.getSeconds();
-
-	return [hour, minute, second];
 }
