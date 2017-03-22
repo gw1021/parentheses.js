@@ -4,16 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>빈칸 문제 만들기</title>
-	<!-- Google Fonts -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-
-	<!-- CSS Reset -->
 	<link rel="stylesheet" href="http://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
-
-	<!-- Milligram CSS minified -->
 	<link rel="stylesheet" href="http://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
-
-	<!-- You should properly set the path from the main file. -->
 	<style>
 	.main {
 		max-width: 75%;
@@ -24,9 +17,19 @@
 	}
 	.output {
 		margin-bottom: 1.5rem;
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		overflow: auto;
 	}
 	@media print {
 		#noprint { display:none; }
+	}
+	.remember {
+		font-size: 2rem;
+		position: fixed;
+		color: #ffd43b;
+		top: 0;
+		right: 0;
 	}
 	</style>
 </head>
@@ -47,17 +50,11 @@
 		</div>
 		<div id="noprint"><button onclick="printPage()">인쇄하기</button> <button onclick="getString()">다시만들기</button> <a class="button button-outline" href="">처음부터</a></div>
 	</div>
-	
+	<span class="remember">&#127895;</span>
 </div>
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-	console.log( "Jquery is ready!" );
-	$( ".output" ).text("ready!");
-	// jquery 플러그인이 로딩되면 출격하는 텍스트들..
-});
-
 function getString() {
 	$( ".controll" ).hide();
 	$( ".output-section" ).show();
@@ -88,17 +85,6 @@ function rePlaced(className) {
 function printPage() {
 	window.print();
 }
-
-function getCurrentDate() {
-	var ms = new Date();
-
-	var hour = ms.getHours();
-	var minute = ms.getMinutes();
-	var second = ms.getSeconds();
-
-	return [hour, minute, second];
-}
-
 </script>
 </body>
 </html>
