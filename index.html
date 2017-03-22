@@ -3,36 +3,64 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Document</title>
+	<title>빈칸 문제 만들기</title>
+	<!-- Google Fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+	<!-- CSS Reset -->
+	<link rel="stylesheet" href="http://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+	<!-- Milligram CSS minified -->
+	<link rel="stylesheet" href="http://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+	<!-- You should properly set the path from the main file. -->
+	<style>
+	.main {
+		max-width: 75%;
+		margin: 50px auto;
+	}
+	.output-section {
+		display: none;
+	}
+	.output {
+		margin-bottom: 1.5rem;
+	}
+	@media print {
+		#noprint { display:none; }
+	}
+	</style>
 </head>
 <body>
-	<h3>sampleString</h3>
-		<p>새는 알에서 나오기 위해 투쟁한다. 알은 세계이다. 태어나려고 하는 자는 누구든 하나의 세계를 파괴하지 않으면 안된다. 새는 신을 향해 날아간다. 그 신의 이름은 아브락사스이다.</p>
-		<p>가득 찬 것보다는 조금 빈 것이 좋다. 희망이 이루어진 상태보다는 희망하고 있을 때가 좋다. 보고싶다고 다 보는것보다 하나 정도 남겨 놓는 것도 좋다.</p>
-	<h3>GetString</h3>
-	<div class="pure-form">
-	<input type="text" id="getting" class="pure-u-1" placeholder="String"> <button class="pure-button pure-button-primary" onclick="getString()">Getting</button> <button class="pure-button" onclick="printPage()">Print</button>
+<div class="main">
+	<div class="controll">
+		<h3>빈칸 문제 만들기</h3>
+		<label for="getting">INPUT</label>
+		<textarea placeholder="이곳에 내용을 넣습니다." id="getting"></textarea>
+		<button onclick="getString()">다음단계로</button>
 	</div>
-	<h3>Original</h3>
-	<div class="poem orginal">
-		not loaded yet
-		<!-- orginal string -->
+
+	<div class="output-section">
+	<h3 id="noprint">클릭해서 빈칸 만들기</h3>
+		<div class="output">
+			not loaded yet
+			<!-- output string -->
+		</div>
+		<div id="noprint"><button onclick="printPage()">인쇄하기</button> <button onclick="getString()">다시만들기</button> <a class="button button-outline" href="">처음부터</a></div>
 	</div>
-	<h3>Text Split</h3>
-	<div class="poem output">
-		not loaded yet
-		<!-- output string -->
-	</div>
+	
+</div>
+
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	console.log( "Jquery is ready!" );
-	$( ".orginal" ).text("ready!");
 	$( ".output" ).text("ready!");
 	// jquery 플러그인이 로딩되면 출격하는 텍스트들..
 });
 
 function getString() {
+	$( ".controll" ).hide();
+	$( ".output-section" ).show();
 	var orginalString = $("#getting").val();//input 받아 변수로 저장
 	var textrepeat = orginalString.split(" ");// orginalString 스플릿
 	$( ".output" ).empty();//output을 미리청소
