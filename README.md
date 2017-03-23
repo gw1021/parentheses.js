@@ -3,25 +3,26 @@ get string, mouse Click, make parentheses
 
 # usage
 input text
-```
+```html
 <input type="text" id="getting">
 or
-<teaxarea id="getting"></textarea>
+<textarea id="getting"></textarea>
 ```
-
 
 get string (controll)
-```
+```html
 <button onclick="getString()">Getting</button>
 ```
 
-print
-```
-<button onclick="printPage()">Print</button>
-```
 output text & click text
-```
+```html
 <div class="output">
 	<!-- output string -->
 </div>
+```
+
+# optional
+print
+```html
+<button onclick="printPage()">Print</button>
 ```
