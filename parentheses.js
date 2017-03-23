@@ -1,11 +1,9 @@
 function getString() {
-	$( ".controll" ).hide();
-	$( ".output-section" ).show();
 	var orginalString = $("#getting").val();//input 받아 변수로 저장
 	var textrepeat = orginalString.split(" ");// orginalString 스플릿
 	$( ".output" ).empty();//output을 미리청소
 	$( ".orginal" ).text(orginalString);//오리지널칸에 orginalString 출력
-	var	indexing = 1;
+	var indexing = 1;
 	for (var i in textrepeat) {
 		$( ".output" ).append( "<span id=splt class=spltext"+ indexing++ +" onclick=rePlaced(this.className)>" + textrepeat[i] +"&nbsp;</span>" );
 	}
