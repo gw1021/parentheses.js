@@ -1,24 +1,27 @@
 # parentheses
 get string, mouse Click, make parentheses
 
-# resource 
-- jquery
-
 # usage
-- body
+input text
 ```
-<input type="text" id="getting" placeholder="String"> 
-<button onclick="getString()">Getting</button> <button onclick="printPage()">Print</button>
+<input type="text" id="getting">
+or
+<teaxarea id="getting"></textarea>
+```
 
-<h1>Original</h1>
-<div class="orginal">
-	<!-- orginal string -->
-</div>
 
-<h1>Text Split</h1>
+get string (controll)
+```
+<button onclick="getString()">Getting</button>
+```
+
+print
+```
+<button onclick="printPage()">Print</button>
+```
+output text & click text
+```
 <div class="output">
 	<!-- output string -->
 </div>
 ```
--- jquery.js - cdn
--- parentheses.js - this git
