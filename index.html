@@ -8,30 +8,7 @@
 	<link rel="stylesheet" href="http://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
 	<link rel="stylesheet" href="http://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 	<style>
-	.main {
-		max-width: 75%;
-		margin: 50px auto;
-	}
-	.output-section {
-		display: none;
-	}
-	.output {
-		margin-bottom: 1.5rem;
-		overflow-wrap: break-word;
-		word-wrap: break-word;
-		overflow: auto;
-	}
-	@media print {
-		#noprint { display:none; }
-		.main { max-width: 100%; }
-	}
-	.remember {
-		font-size: 2rem;
-		position: fixed;
-		color: #ffd43b;
-		top: 0;
-		right: 0;
-	}
+	.main{max-width:75%;margin:50px auto}.output-section{display:none}.output{margin-bottom:1.5rem;overflow-wrap:break-word;word-wrap:break-word;overflow:auto}@media print{#noprint{display:none}.main{max-width:100%}}.remember{font-size:2rem;position:fixed;color:#ffd43b;top:0;right:0}
 	</style>
 </head>
 <body>
@@ -54,38 +31,9 @@
 	<span class="remember">&#127895;</span>
 </div>
 
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-function getString() {
-	$( ".controll" ).hide();
-	$( ".output-section" ).show();
-	var orginalString = $("#getting").val();//input 받아 변수로 저장
-	var textrepeat = orginalString.split(" ");// orginalString 스플릿
-	$( ".output" ).empty();//output을 미리청소
-	$( ".orginal" ).text(orginalString);//오리지널칸에 orginalString 출력
-	var	indexing = 1;
-	for (var i in textrepeat) {
-		$( ".output" ).append( "<span id=splt class=spltext"+ indexing++ +" onclick=rePlaced(this.className)>" + textrepeat[i] +"&nbsp;</span>" );
-	}
-}
-
-function insertSpace(t, l) {
-	var spaceString = new String;
-	for(i=0;i<l;i++){
-	spaceString += t;
-	}
-	return spaceString;
-}
-
-function rePlaced(className) {
-	var txtlength = $( "."+className ).text().length;
-	$( "."+className ).html("&nbsp;("+insertSpace("&nbsp;&nbsp;&nbsp;",txtlength)+")&nbsp;");
-	$( "span" ).removeClass( className );
-}
-
-function printPage() {
-	window.print();
-}
+function getString(){$(".controll").hide(),$(".output-section").show();var a=$("#getting").val(),b=a.split(" ");$(".output").empty();var c=1;for(var d in b)$(".output").append("<span id=splt class=spltext"+c++ +" onclick=rePlaced(this.className)>"+b[d]+"&nbsp;</span>")}function insertSpace(a,b){var c=new String;for(i=0;i<b;i++)c+=a;return c}function rePlaced(a){var b=$("."+a).text().length;$("."+a).html("&nbsp;("+insertSpace("&nbsp;&nbsp;&nbsp;",b)+")&nbsp;"),$("span").removeClass(a)}function printPage(){window.print()}
 </script>
 </body>
 </html>
